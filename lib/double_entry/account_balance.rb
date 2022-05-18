@@ -8,6 +8,7 @@ module DoubleEntry
   #
   # Account balances are created on demand when transfers occur.
   class AccountBalance < ActiveRecord::Base
+    has_paper_trail
     delegate :currency, to: :account
 
     def balance

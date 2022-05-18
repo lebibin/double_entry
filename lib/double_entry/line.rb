@@ -55,6 +55,7 @@ module DoubleEntry
   # by account, or account and code, over a particular period.
   #
   class Line < ActiveRecord::Base
+    has_paper_trail
     belongs_to :detail, polymorphic: true, required: false
     has_many :metadata, class_name: 'DoubleEntry::LineMetadata' unless -> { DoubleEntry.config.json_metadata }
     scope :credits, -> { where('amount > 0') }
