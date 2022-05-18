@@ -65,7 +65,7 @@ module DoubleEntry
           WHERE account = ?
           AND scope = ?
           AND id < ?
-          ORDER BY id DESC
+          ORDER BY created_at DESC
           LIMIT 1
         SQL
 
